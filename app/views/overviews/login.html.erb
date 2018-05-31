@@ -1,2 +1,8 @@
 <h1>Overviews#login</h1>
 <p>Find me in app/views/overviews/login.html.erb</p>
+<%= form_tag("/checkCreds", method: "post") do %>
+	<% @accounts.each do |a| %>
+		<%= radio_button_tag :name, a.name %> <%= a.name %>
+	<% end %>
+	<%= submit_tag("Login") %>
+<% end %>
