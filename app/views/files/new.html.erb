@@ -2,6 +2,16 @@
 
 <%= form_for(@sound, url: {action: "create"}) do |f| %>
   <%= f.file_field :sound_file %>
+	<br>
 	<%= f.submit %>
 <% end %>
 
+<br><br>
+
+<%= form_tag("/files", method: "post") do %>
+	<% @sound_files.each do |sf| %>
+		<%= radio_button_tag(:sound_file, sf.id) %> <%= sf.name %>
+	<% end %>
+	<br>
+	<%= submit_tag("Select") %>
+<% end %>

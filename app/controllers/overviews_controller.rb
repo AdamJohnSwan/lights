@@ -1,6 +1,6 @@
 class OverviewsController < ApplicationController
   def index
-		
+		@interfaces_amount = 3
   end
 
   def login

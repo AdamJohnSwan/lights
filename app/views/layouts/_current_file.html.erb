@@ -1,0 +1,6 @@
+<% if current_sound %>
+	<a href="/files/new">
+		<%= Sound.find_by_id(current_sound).name %>	
+	</a>
+<% end %>
+
